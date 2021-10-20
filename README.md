@@ -1,3 +1,4 @@
+<html>
 <!DOCTYPE html>
 <meta charset="utf-8">
 <head>
@@ -151,3 +152,4 @@ d3.tsv("VotingInformation.tsv", function(error, data){
 
 </script>
 </body>
+</html>
