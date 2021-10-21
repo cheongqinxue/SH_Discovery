@@ -17,3 +17,7 @@ Statements can be extracted and analysed in aggregate. We can figure out who was
 The Retail, Wholesale and Department Store Union's statements are negative on average - not surprising since they are accusing Amazon of [wrongdoing during a union election](https://htmlpreview.github.io/?https://github.com/cheongqinxue/SH_Discovery/blob/main/Information%20Extraction%20Demos/demo_a.html).
 
 ![alt text](https://github.com/cheongqinxue/SH_Discovery/blob/main/Sentiment/fileA.png)
+
+#### How are the stakeholders related?
+
+Amongst the stakeholders
