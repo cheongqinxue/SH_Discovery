@@ -25,5 +25,7 @@ As it turns out, one of those in the diagram above, Stuart Appelbaum, works for 
   <img src="Relation%20Extraction/RWDSU_1.png" width="550">
 </p>
 
-The same can also be done at scale. Some of the larger relationship networks discovered using the same method:
-[Amazon](Relation%20Extraction/amazon.html)
+The same can also be done at scale. Some of the larger relationship networks discovered using the same method:<br>
+- [Amazon](https://htmlpreview.github.io/?https://github.com/cheongqinxue/SH_Discovery/blob/main/Relation%20Extraction/amazon.html)
+- [AWS](https://htmlpreview.github.io/?https://github.com/cheongqinxue/SH_Discovery/blob/main/Relation%20Extraction/aws.html)
+- 
