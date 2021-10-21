@@ -12,4 +12,6 @@ The specific use case here is to extract statements made by people or organisati
 
 #### Identifying stakeholders to investigate
 
+Statements can be extracted and analysed in aggregate. We can figure out who was talking about an entity of interest and study the average sentiments of the statements made about that entity. Using ~1000 articles in Aug 21, the following depicts the average sentiment of statements made by various persons/organisations that mention A.
+
 ![alt text](https://github.com/cheongqinxue/SH_Discovery/blob/main/Sentiment/fileA.png)
