@@ -1,0 +1,116 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.css" type="text/css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis-network.min.js"> </script>
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 1000px;
+            height: 1000px;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"group": 1, "id": 3776, "label": "Clifford", "shape": "dot", "size": 5}, {"group": 2, "id": 609, "label": "Woodford Patient Capital Trust Plc", "shape": "dot", "size": 5}, {"group": 1, "id": 4090, "label": "Scott Cochrane", "shape": "dot", "size": 5}, {"group": 1, "id": 2504, "label": "Iain McCombie Iain", "shape": "dot", "size": 5}, {"group": 2, "id": 6536, "label": "UK All Companies", "shape": "dot", "size": 5}, {"group": 2, "id": 5675, "label": "Baillie Gifford UK Growth Trust Plc", "shape": "dot", "size": 5}, {"group": 2, "id": 2672, "label": "St. James\u2019s Place", "shape": "dot", "size": 5}, {"group": 1, "id": 7153, "label": "Cathy Pitt", "shape": "dot", "size": 5}, {"group": 2, "id": 56, "label": "the Global Stewardship Portfolio Construction Group (PCG", "shape": "dot", "size": 5}, {"group": 1, "id": 2010, "label": "Milena Mileva Milena", "shape": "dot", "size": 5}, {"group": 1, "id": 3071, "label": "Baillie", "shape": "dot", "size": 5}, {"group": 1, "id": 4093, "label": "Carolan Dobson", "shape": "dot", "size": 5}, {"group": 2, "id": 7679, "label": "Rightmove", "shape": "dot", "size": 5}]);
+        edges = new vis.DataSet([{"from": 3776, "group": "per:employee_of", "label": "per:employee_of", "to": 56, "weight": 2}, {"from": 3776, "group": "per:employee_of", "label": "per:employee_of", "to": 5675, "weight": 2}, {"from": 609, "group": "org:alternate_names", "label": "org:alternate_names", "to": 56, "weight": 2}, {"from": 609, "group": "org:alternate_names", "label": "org:alternate_names", "to": 5675, "weight": 2}, {"from": 4090, "group": "per:employee_of", "label": "per:employee_of", "to": 56, "weight": 2}, {"from": 4090, "group": "per:employee_of", "label": "per:employee_of", "to": 6536, "weight": 2}, {"from": 4090, "group": "per:employee_of", "label": "per:employee_of", "to": 5675, "weight": 2}, {"from": 2504, "group": "per:employee_of", "label": "per:employee_of", "to": 56, "weight": 2}, {"from": 2504, "group": "per:employee_of", "label": "per:employee_of", "to": 6536, "weight": 2}, {"from": 2504, "group": "per:employee_of", "label": "per:employee_of", "to": 5675, "weight": 2}, {"from": 6536, "group": "org:subsidiaries", "label": "org:subsidiaries", "to": 56, "weight": 2}, {"from": 6536, "group": "per:employee_of", "label": "per:employee_of", "to": 2010, "weight": 2}, {"from": 6536, "group": "org:subsidiaries", "label": "org:subsidiaries", "to": 5675, "weight": 2}, {"from": 6536, "group": "org:subsidiaries", "label": "org:subsidiaries", "to": 6536, "weight": 2}, {"from": 6536, "group": "org:subsidiaries", "label": "org:subsidiaries", "to": 7679, "weight": 2}, {"from": 6536, "group": "org:top_members/employees", "label": "org:top_members/employees", "to": 3071, "weight": 2}, {"from": 6536, "group": "per:employee_of", "label": "per:employee_of", "to": 7153, "weight": 2}, {"from": 5675, "group": "org:subsidiaries", "label": "org:subsidiaries", "to": 5675, "weight": 2}, {"from": 5675, "group": "org:parents", "label": "org:parents", "to": 56, "weight": 2}, {"from": 5675, "group": "per:employee_of", "label": "per:employee_of", "to": 2010, "weight": 2}, {"from": 5675, "group": "org:subsidiaries", "label": "org:subsidiaries", "to": 7679, "weight": 2}, {"from": 5675, "group": "per:employee_of", "label": "per:employee_of", "to": 7153, "weight": 2}, {"from": 5675, "group": "per:employee_of", "label": "per:employee_of", "to": 4093, "weight": 2}, {"from": 2672, "group": "org:website", "label": "org:website", "to": 56, "weight": 2}, {"from": 7153, "group": "per:employee_of", "label": "per:employee_of", "to": 56, "weight": 2}, {"from": 7153, "group": "per:alternate_names", "label": "per:alternate_names", "to": 7153, "weight": 2}, {"from": 56, "group": "org:subsidiaries", "label": "org:subsidiaries", "to": 56, "weight": 2}, {"from": 56, "group": "per:employee_of", "label": "per:employee_of", "to": 2010, "weight": 2}, {"from": 56, "group": "org:subsidiaries", "label": "org:subsidiaries", "to": 7679, "weight": 2}, {"from": 56, "group": "org:top_members/employees", "label": "org:top_members/employees", "to": 3071, "weight": 2}, {"from": 56, "group": "per:employee_of", "label": "per:employee_of", "to": 4093, "weight": 2}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": false,
+            "type": "continuous"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "barnesHut": {
+            "avoidOverlap": 0,
+            "centralGravity": 0.3,
+            "damping": 0.09,
+            "gravitationalConstant": -2000,
+            "springConstant": 0.001,
+            "springLength": 250
+        },
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+	 
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>

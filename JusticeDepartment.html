@@ -1,0 +1,116 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.css" type="text/css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis-network.min.js"> </script>
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 1000px;
+            height: 1000px;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"group": 1, "id": 1796, "label": "Susan Wild Susan Wild", "shape": "dot", "size": 5}, {"group": 1, "id": 3400, "label": "Jonathan Kanter", "shape": "dot", "size": 5}, {"group": 1, "id": 1417, "label": "Jes\u00fas M. Alvarado-Rivera", "shape": "dot", "size": 5}, {"group": 1, "id": 6293, "label": "Anita Kumar", "shape": "dot", "size": 5}, {"group": 1, "id": 6325, "label": "Lisa Monaco", "shape": "dot", "size": 5}, {"group": 1, "id": 4598, "label": "Susan Donoghue", "shape": "dot", "size": 5}, {"group": 1, "id": 3609, "label": "Kenneth Dintzer", "shape": "dot", "size": 5}, {"group": 2, "id": 1501, "label": "the Justice Department", "shape": "dot", "size": 5}, {"group": 1, "id": 7423, "label": "Richard A. Powers", "shape": "dot", "size": 5}]);
+        edges = new vis.DataSet([{"from": 1796, "group": "per:stateorprovinces_of_residence", "label": "per:stateorprovinces_of_residence", "to": 1501, "weight": 2}, {"from": 3400, "group": "per:employee_of", "label": "per:employee_of", "to": 1501, "weight": 2}, {"from": 1417, "group": "per:employee_of", "label": "per:employee_of", "to": 1501, "weight": 2}, {"from": 6293, "group": "per:employee_of", "label": "per:employee_of", "to": 1501, "weight": 2}, {"from": 6325, "group": "per:employee_of", "label": "per:employee_of", "to": 1501, "weight": 2}, {"from": 4598, "group": "org:top_members/employees", "label": "org:top_members/employees", "to": 1501, "weight": 2}, {"from": 3609, "group": "per:employee_of", "label": "per:employee_of", "to": 1501, "weight": 2}, {"from": 1501, "group": "per:employee_of", "label": "per:employee_of", "to": 7423, "weight": 2}, {"from": 1501, "group": "org:alternate_names", "label": "org:alternate_names", "to": 1501, "weight": 2}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": false,
+            "type": "continuous"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "barnesHut": {
+            "avoidOverlap": 0,
+            "centralGravity": 0.3,
+            "damping": 0.09,
+            "gravitationalConstant": -2000,
+            "springConstant": 0.001,
+            "springLength": 250
+        },
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+	 
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>

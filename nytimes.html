@@ -1,0 +1,116 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.css" type="text/css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis-network.min.js"> </script>
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 1000px;
+            height: 1000px;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"group": 1, "id": 7138, "label": "Ann Carrns", "shape": "dot", "size": 5}, {"group": 2, "id": 1893, "label": "The New York Times", "shape": "dot", "size": 5}, {"group": 1, "id": 4682, "label": "Felix Schmitt", "shape": "dot", "size": 5}, {"group": 1, "id": 5131, "label": "Noam Scheiber", "shape": "dot", "size": 5}, {"group": 1, "id": 6892, "label": "Kori Schake", "shape": "dot", "size": 5}, {"group": 1, "id": 4019, "label": "William Widmer", "shape": "dot", "size": 5}, {"group": 1, "id": 3444, "label": "Tristan Spinski", "shape": "dot", "size": 5}, {"group": 1, "id": 3515, "label": "Katie Robertson", "shape": "dot", "size": 5}, {"group": 1, "id": 3475, "label": "Kayana Szymczak", "shape": "dot", "size": 5}, {"group": 1, "id": 5079, "label": "Rachel Abrams", "shape": "dot", "size": 5}, {"group": 1, "id": 6650, "label": "Dean Baquet", "shape": "dot", "size": 5}, {"group": 1, "id": 5627, "label": "Joanna Nikas", "shape": "dot", "size": 5}, {"group": 1, "id": 6012, "label": "Keith Meyers", "shape": "dot", "size": 5}]);
+        edges = new vis.DataSet([{"from": 7138, "group": "per:employee_of", "label": "per:employee_of", "to": 1893, "weight": 2}, {"from": 1893, "group": "per:employee_of", "label": "per:employee_of", "to": 5627, "weight": 2}, {"from": 1893, "group": "per:employee_of", "label": "per:employee_of", "to": 3444, "weight": 2}, {"from": 1893, "group": "per:employee_of", "label": "per:employee_of", "to": 4682, "weight": 2}, {"from": 1893, "group": "per:employee_of", "label": "per:employee_of", "to": 6012, "weight": 2}, {"from": 1893, "group": "per:employee_of", "label": "per:employee_of", "to": 5131, "weight": 2}, {"from": 1893, "group": "org:top_members/employees", "label": "org:top_members/employees", "to": 5079, "weight": 2}, {"from": 1893, "group": "org:alternate_names", "label": "org:alternate_names", "to": 1893, "weight": 2}, {"from": 1893, "group": "org:top_members/employees", "label": "org:top_members/employees", "to": 3515, "weight": 2}, {"from": 1893, "group": "org:top_members/employees", "label": "org:top_members/employees", "to": 6650, "weight": 2}, {"from": 1893, "group": "per:employee_of", "label": "per:employee_of", "to": 6892, "weight": 2}, {"from": 1893, "group": "per:employee_of", "label": "per:employee_of", "to": 4019, "weight": 2}, {"from": 1893, "group": "per:employee_of", "label": "per:employee_of", "to": 3475, "weight": 2}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": false,
+            "type": "continuous"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "barnesHut": {
+            "avoidOverlap": 0,
+            "centralGravity": 0.3,
+            "damping": 0.09,
+            "gravitationalConstant": -2000,
+            "springConstant": 0.001,
+            "springLength": 250
+        },
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+	 
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>

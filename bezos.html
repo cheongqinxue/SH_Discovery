@@ -1,0 +1,116 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.css" type="text/css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis-network.min.js"> </script>
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 1000px;
+            height: 1000px;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"group": 2, "id": 1409, "label": "Amazon Labor Union (ALU)", "shape": "dot", "size": 5}, {"group": 2, "id": 2819, "label": "Bezos Expeditions", "shape": "dot", "size": 5}, {"group": 2, "id": 1032, "label": "Amazon Insurance Accelerator", "shape": "dot", "size": 5}, {"group": 2, "id": 8330, "label": "Amazon", "shape": "dot", "size": 5}, {"group": 2, "id": 2700, "label": "Amazon Global Air", "shape": "dot", "size": 5}, {"group": 1, "id": 3342, "label": "MacKenzie Scott", "shape": "dot", "size": 5}, {"group": 2, "id": 1149, "label": "the Amazon Delivery Station", "shape": "dot", "size": 5}, {"group": 2, "id": 1431, "label": "AWS Graviton", "shape": "dot", "size": 5}, {"group": 2, "id": 409, "label": "WSWS", "shape": "dot", "size": 5}, {"group": 2, "id": 1563, "label": "Whole Foods Market Inc.", "shape": "dot", "size": 5}, {"group": 2, "id": 8092, "label": "Walmart", "shape": "dot", "size": 5}, {"group": 2, "id": 2472, "label": "an Amazon Division", "shape": "dot", "size": 5}, {"group": 2, "id": 3113, "label": "Amazon Prime Air", "shape": "dot", "size": 5}, {"group": 2, "id": 1330, "label": "Amazon Web Services (AWS)", "shape": "dot", "size": 5}, {"group": 2, "id": 9401, "label": "BP", "shape": "dot", "size": 5}, {"group": 2, "id": 7739, "label": "Amazon PR", "shape": "dot", "size": 5}, {"group": 2, "id": 1347, "label": "Amazon Worldwide Consumer", "shape": "dot", "size": 5}, {"group": 2, "id": 8391, "label": "SpaceX", "shape": "dot", "size": 5}, {"group": 2, "id": 5448, "label": "Amazon Prime", "shape": "dot", "size": 5}, {"group": 2, "id": 1096, "label": "Worldwide Consumer Business", "shape": "dot", "size": 5}, {"group": 2, "id": 1100, "label": "the Bezos Family Foundation", "shape": "dot", "size": 5}, {"group": 2, "id": 7630, "label": "Prime Air", "shape": "dot", "size": 5}, {"group": 1, "id": 7118, "label": "Mark Bezos", "shape": "dot", "size": 5}, {"group": 2, "id": 6866, "label": "Amazon Jobs", "shape": "dot", "size": 5}, {"group": 2, "id": 1363, "label": "the Bezos Household Basis", "shape": "dot", "size": 5}, {"group": 1, "id": 6362, "label": "Jeff Bezos", "shape": "dot", "size": 5}, {"group": 2, "id": 6241, "label": "Whole Foods", "shape": "dot", "size": 5}, {"group": 2, "id": 2146, "label": "Amazon Web Service", "shape": "dot", "size": 5}, {"group": 2, "id": 5477, "label": "Blue Origin", "shape": "dot", "size": 5}, {"group": 2, "id": 5094, "label": "Amazon AMZN", "shape": "dot", "size": 5}, {"group": 2, "id": 4837, "label": "XPO Logistics", "shape": "dot", "size": 5}, {"group": 2, "id": 4586, "label": "Amazon Spheres", "shape": "dot", "size": 5}, {"group": 2, "id": 2163, "label": "The Washington Post", "shape": "dot", "size": 5}, {"group": 1, "id": 884, "label": "Warne", "shape": "dot", "size": 5}, {"group": 2, "id": 1270, "label": "the Amazon Supply Station", "shape": "dot", "size": 5}, {"group": 2, "id": 3959, "label": "Reuters Amazon", "shape": "dot", "size": 5}, {"group": 2, "id": 2808, "label": "Amazon Go Grocery", "shape": "dot", "size": 5}, {"group": 2, "id": 8573, "label": "Tesla", "shape": "dot", "size": 5}, {"group": 2, "id": 2941, "label": "Amazon.com Inc.", "shape": "dot", "size": 5}]);
+        edges = new vis.DataSet([{"from": 1409, "group": "org:founded_by", "label": "org:founded_by", "to": 6362, "weight": 2}, {"from": 2819, "group": "per:employee_of", "label": "per:employee_of", "to": 6362, "weight": 2}, {"from": 1032, "group": "org:alternate_names", "label": "org:alternate_names", "to": 1032, "weight": 2}, {"from": 1032, "group": "per:employee_of", "label": "per:employee_of", "to": 6362, "weight": 2}, {"from": 8330, "group": "org:top_members/employees", "label": "org:top_members/employees", "to": 6362, "weight": 2}, {"from": 8330, "group": "org:alternate_names", "label": "org:alternate_names", "to": 8330, "weight": 2}, {"from": 8330, "group": "org:parents", "label": "org:parents", "to": 7630, "weight": 2}, {"from": 8330, "group": "org:parents", "label": "org:parents", "to": 6241, "weight": 2}, {"from": 2700, "group": "org:founded_by", "label": "org:founded_by", "to": 6362, "weight": 2}, {"from": 3342, "group": "per:spouse", "label": "per:spouse", "to": 6362, "weight": 2}, {"from": 3342, "group": "org:top_members/employees", "label": "org:top_members/employees", "to": 9401, "weight": 2}, {"from": 3342, "group": "per:alternate_names", "label": "per:alternate_names", "to": 3342, "weight": 2}, {"from": 1149, "group": "org:founded_by", "label": "org:founded_by", "to": 6362, "weight": 2}, {"from": 1431, "group": "per:employee_of", "label": "per:employee_of", "to": 6362, "weight": 2}, {"from": 1431, "group": "org:alternate_names", "label": "org:alternate_names", "to": 1431, "weight": 2}, {"from": 409, "group": "org:top_members/employees", "label": "org:top_members/employees", "to": 6362, "weight": 2}, {"from": 1563, "group": "org:parents", "label": "org:parents", "to": 8092, "weight": 2}, {"from": 1563, "group": "org:founded_by", "label": "org:founded_by", "to": 6362, "weight": 2}, {"from": 8092, "group": "org:founded_by", "label": "org:founded_by", "to": 6362, "weight": 2}, {"from": 2472, "group": "per:employee_of", "label": "per:employee_of", "to": 6362, "weight": 2}, {"from": 3113, "group": "org:parents", "label": "org:parents", "to": 3113, "weight": 2}, {"from": 3113, "group": "org:parents", "label": "org:parents", "to": 7630, "weight": 2}, {"from": 3113, "group": "org:founded_by", "label": "org:founded_by", "to": 6362, "weight": 2}, {"from": 1330, "group": "org:subsidiaries", "label": "org:subsidiaries", "to": 1330, "weight": 2}, {"from": 1330, "group": "per:employee_of", "label": "per:employee_of", "to": 6362, "weight": 2}, {"from": 9401, "group": "per:employee_of", "label": "per:employee_of", "to": 6362, "weight": 2}, {"from": 7739, "group": "per:employee_of", "label": "per:employee_of", "to": 6362, "weight": 2}, {"from": 1347, "group": "org:top_members/employees", "label": "org:top_members/employees", "to": 6362, "weight": 2}, {"from": 1347, "group": "org:subsidiaries", "label": "org:subsidiaries", "to": 1347, "weight": 2}, {"from": 8391, "group": "org:founded_by", "label": "org:founded_by", "to": 6362, "weight": 2}, {"from": 5448, "group": "org:alternate_names", "label": "org:alternate_names", "to": 5448, "weight": 2}, {"from": 5448, "group": "org:top_members/employees", "label": "org:top_members/employees", "to": 7118, "weight": 2}, {"from": 5448, "group": "per:employee_of", "label": "per:employee_of", "to": 6362, "weight": 2}, {"from": 1096, "group": "org:parents", "label": "org:parents", "to": 2146, "weight": 2}, {"from": 1096, "group": "org:top_members/employees", "label": "org:top_members/employees", "to": 6362, "weight": 2}, {"from": 1100, "group": "per:employee_of", "label": "per:employee_of", "to": 6362, "weight": 2}, {"from": 7630, "group": "org:subsidiaries", "label": "org:subsidiaries", "to": 7630, "weight": 2}, {"from": 7630, "group": "per:employee_of", "label": "per:employee_of", "to": 6362, "weight": 2}, {"from": 7118, "group": "per:siblings", "label": "per:siblings", "to": 6362, "weight": 2}, {"from": 6866, "group": "org:founded_by", "label": "org:founded_by", "to": 6362, "weight": 2}, {"from": 1363, "group": "per:employee_of", "label": "per:employee_of", "to": 6362, "weight": 2}, {"from": 6362, "group": "org:top_members/employees", "label": "org:top_members/employees", "to": 2941, "weight": 2}, {"from": 6362, "group": "org:founded_by", "label": "org:founded_by", "to": 2146, "weight": 2}, {"from": 6362, "group": "org:founded_by", "label": "org:founded_by", "to": 5094, "weight": 2}, {"from": 6362, "group": "per:employee_of", "label": "per:employee_of", "to": 5477, "weight": 2}, {"from": 6362, "group": "per:alternate_names", "label": "per:alternate_names", "to": 6362, "weight": 2}, {"from": 6362, "group": "per:employee_of", "label": "per:employee_of", "to": 4586, "weight": 2}, {"from": 6362, "group": "org:founded_by", "label": "org:founded_by", "to": 4837, "weight": 2}, {"from": 6362, "group": "per:employee_of", "label": "per:employee_of", "to": 2163, "weight": 2}, {"from": 6362, "group": "per:siblings", "label": "per:siblings", "to": 884, "weight": 2}, {"from": 6362, "group": "org:founded_by", "label": "org:founded_by", "to": 6241, "weight": 2}, {"from": 6362, "group": "org:founded_by", "label": "org:founded_by", "to": 1270, "weight": 2}, {"from": 6362, "group": "org:top_members/employees", "label": "org:top_members/employees", "to": 8573, "weight": 2}, {"from": 6362, "group": "org:top_members/employees", "label": "org:top_members/employees", "to": 2808, "weight": 2}, {"from": 6362, "group": "org:top_members/employees", "label": "org:top_members/employees", "to": 3959, "weight": 2}, {"from": 6241, "group": "org:subsidiaries", "label": "org:subsidiaries", "to": 2941, "weight": 2}, {"from": 2146, "group": "org:parents", "label": "org:parents", "to": 2146, "weight": 2}, {"from": 4837, "group": "org:alternate_names", "label": "org:alternate_names", "to": 4837, "weight": 2}, {"from": 2808, "group": "org:subsidiaries", "label": "org:subsidiaries", "to": 2808, "weight": 2}, {"from": 2941, "group": "org:alternate_names", "label": "org:alternate_names", "to": 2941, "weight": 2}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": false,
+            "type": "continuous"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "barnesHut": {
+            "avoidOverlap": 0,
+            "centralGravity": 0.3,
+            "damping": 0.09,
+            "gravitationalConstant": -2000,
+            "springConstant": 0.001,
+            "springLength": 250
+        },
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+	 
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>

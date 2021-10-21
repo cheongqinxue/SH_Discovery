@@ -1,0 +1,116 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.css" type="text/css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis-network.min.js"> </script>
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 1000px;
+            height: 1000px;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"group": 1, "id": 2953, "label": "Kirsten John Foy", "shape": "dot", "size": 5}, {"group": 1, "id": 5904, "label": "Joni Yoswein", "shape": "dot", "size": 5}, {"group": 1, "id": 5140, "label": "Yvette Clarke", "shape": "dot", "size": 5}, {"group": 1, "id": 3099, "label": "Helene Weinstein", "shape": "dot", "size": 5}, {"group": 1, "id": 3100, "label": "Diana Richardson", "shape": "dot", "size": 5}, {"group": 1, "id": 3102, "label": "Peter Abbate Jr.", "shape": "dot", "size": 5}, {"group": 1, "id": 3104, "label": "Marcela Mitaynes", "shape": "dot", "size": 5}, {"group": 1, "id": 2364, "label": "Rodneyse Bichotte Hermelyn", "shape": "dot", "size": 5}, {"group": 1, "id": 4286, "label": "Zohran Mamdani", "shape": "dot", "size": 5}, {"group": 1, "id": 3531, "label": "Roxanne Persaud", "shape": "dot", "size": 5}, {"group": 1, "id": 4561, "label": "Brian Kavanagh", "shape": "dot", "size": 5}, {"group": 1, "id": 2387, "label": "William Boyland Jr", "shape": "dot", "size": 5}, {"group": 1, "id": 3540, "label": "Emily Gallagher", "shape": "dot", "size": 5}, {"group": 1, "id": 4563, "label": "Robert Carroll", "shape": "dot", "size": 5}, {"group": 1, "id": 4566, "label": "Latrice Walker", "shape": "dot", "size": 5}, {"group": 2, "id": 470, "label": "the Puerto Rican/Hispanic Task Force", "shape": "dot", "size": 5}, {"group": 1, "id": 4564, "label": "William Colton", "shape": "dot", "size": 5}, {"group": 1, "id": 2401, "label": "Simcha Eichenstein", "shape": "dot", "size": 5}, {"group": 1, "id": 1892, "label": "Charles \u0026 Inez Barron", "shape": "dot", "size": 5}, {"group": 1, "id": 3314, "label": "Kate Robinson", "shape": "dot", "size": 5}, {"group": 1, "id": 7034, "label": "Vito Lopez", "shape": "dot", "size": 5}, {"group": 2, "id": 124, "label": "the Assembly Committee on Governmental Employees", "shape": "dot", "size": 5}, {"group": 1, "id": 5119, "label": "Joan Millman", "shape": "dot", "size": 5}]);
+        edges = new vis.DataSet([{"from": 2953, "group": "per:employee_of", "label": "per:employee_of", "to": 124, "weight": 2}, {"from": 2953, "group": "per:alternate_names", "label": "per:alternate_names", "to": 2953, "weight": 2}, {"from": 5904, "group": "per:employee_of", "label": "per:employee_of", "to": 5904, "weight": 2}, {"from": 5904, "group": "org:top_members/employees", "label": "org:top_members/employees", "to": 124, "weight": 2}, {"from": 5140, "group": "per:alternate_names", "label": "per:alternate_names", "to": 5140, "weight": 2}, {"from": 5140, "group": "org:top_members/employees", "label": "org:top_members/employees", "to": 124, "weight": 2}, {"from": 3099, "group": "per:employee_of", "label": "per:employee_of", "to": 124, "weight": 2}, {"from": 3100, "group": "org:top_members/employees", "label": "org:top_members/employees", "to": 124, "weight": 2}, {"from": 3102, "group": "org:top_members/employees", "label": "org:top_members/employees", "to": 124, "weight": 2}, {"from": 3104, "group": "per:employee_of", "label": "per:employee_of", "to": 124, "weight": 2}, {"from": 2364, "group": "org:top_members/employees", "label": "org:top_members/employees", "to": 124, "weight": 2}, {"from": 4286, "group": "org:top_members/employees", "label": "org:top_members/employees", "to": 124, "weight": 2}, {"from": 3531, "group": "per:employee_of", "label": "per:employee_of", "to": 124, "weight": 2}, {"from": 4561, "group": "per:employee_of", "label": "per:employee_of", "to": 124, "weight": 2}, {"from": 2387, "group": "org:top_members/employees", "label": "org:top_members/employees", "to": 124, "weight": 2}, {"from": 3540, "group": "org:top_members/employees", "label": "org:top_members/employees", "to": 124, "weight": 2}, {"from": 4563, "group": "org:top_members/employees", "label": "org:top_members/employees", "to": 124, "weight": 2}, {"from": 4566, "group": "org:top_members/employees", "label": "org:top_members/employees", "to": 124, "weight": 2}, {"from": 470, "group": "org:subsidiaries", "label": "org:subsidiaries", "to": 124, "weight": 2}, {"from": 470, "group": "per:employee_of", "label": "per:employee_of", "to": 5119, "weight": 2}, {"from": 4564, "group": "org:top_members/employees", "label": "org:top_members/employees", "to": 124, "weight": 2}, {"from": 2401, "group": "org:top_members/employees", "label": "org:top_members/employees", "to": 124, "weight": 2}, {"from": 1892, "group": "org:top_members/employees", "label": "org:top_members/employees", "to": 124, "weight": 2}, {"from": 1892, "group": "per:spouse", "label": "per:spouse", "to": 1892, "weight": 2}, {"from": 3314, "group": "per:parents", "label": "per:parents", "to": 3314, "weight": 2}, {"from": 3314, "group": "org:top_members/employees", "label": "org:top_members/employees", "to": 124, "weight": 2}, {"from": 7034, "group": "org:top_members/employees", "label": "org:top_members/employees", "to": 124, "weight": 2}, {"from": 124, "group": "org:top_members/employees", "label": "org:top_members/employees", "to": 5119, "weight": 2}, {"from": 124, "group": "org:subsidiaries", "label": "org:subsidiaries", "to": 124, "weight": 2}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": false,
+            "type": "continuous"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "barnesHut": {
+            "avoidOverlap": 0,
+            "centralGravity": 0.3,
+            "damping": 0.09,
+            "gravitationalConstant": -2000,
+            "springConstant": 0.001,
+            "springLength": 250
+        },
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+	 
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>

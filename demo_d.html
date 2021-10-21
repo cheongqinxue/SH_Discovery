@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<head>
+<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+
+  <style>
+    div {
+      font-family: helvetica;
+      font-size: 14px;
+      line-height: 150%;
+    }
+    
+    p{
+      font-weight:300;
+      color:#3a3a3b;
+    }
+      
+    .entity{
+      font-weight:normal;
+      border-bottom: solid 2px lightgrey;
+    }
+    .coref_entity{
+      font-weight:normal;
+      border-bottom: solid 2px white;
+    }
+    
+    .highlight{
+      background-color:#a1d6ff;
+    }
+    
+    span{
+      padding-top:1px;
+      padding-bottom:1px;
+    }
+  </style>
+  </head>
+  <body style="width:70%; max-width:800px; min-width:300px; padding: 30px; padding-left:7%">
+  <h4>Captured Entities</h4>
+  <div style="padding:7px; border: solid 2px #7b9dad; border-radius:7px;">
+<b>Persons</b>: <span style="margin-right:3px;" class="entity" id="A2">Reese Witherspoon</span> | <span style="margin-right:3px;" class="entity" id="A5">Tom Staggs</span> | <span style="margin-right:3px;" class="entity" id="A12">Seth Rodsky</span> | <span style="margin-right:3px;" class="entity" id="A13">Jim Toth</span> | <span style="margin-right:3px;" class="entity" id="A14">Sarah Harden</span><br><b>Organizations</b>: <span style="margin-right:3px;" class="entity" id="A0">Hello Sunshine’</span> | <span style="margin-right:3px;" class="entity" id="A3">Blackstone</span> | <span style="margin-right:3px;" class="entity" id="A4">Disney</span> | <span style="margin-right:3px;" class="entity" id="A9">AT&T</span> | <span style="margin-right:3px;" class="entity" id="A10">Otter Media</span> | <span style="margin-right:3px;" class="entity" id="A11">Emerson Collective</span> | <span style="margin-right:3px;" class="entity" id="A15">Harden</span> | <span style="margin-right:3px;" class="entity" id="A16">the Wall Street Journal</span> | <span style="margin-right:3px;" class="entity" id="A17">Staggs</span> | <span style="margin-right:3px;" class="entity" id="A19">SPAC</span> | <span style="margin-right:3px;" class="entity" id="A20">Forest Road Acquisition Corp. II</span> | <span style="margin-right:3px;" class="entity" id="A21">Amazon</span> | <span style="margin-right:3px;" class="entity" id="A22">MGM Studios</span><br><b>Locations</b>: <span style="margin-right:3px;" class="entity" id="A1">Hollywood</span><br><b>Others</b>: <span style="margin-right:3px;" class="entity" id="A7">“Big Little Lies <sub>work of art</sub></span> | <span style="margin-right:3px;" class="entity" id="A8">The Morning Show <sub>work of art</sub></span>
+  </div><br>
+  <div style="color:#3a3a3b; font-size:12px; ">Original NER Captured:</div>
+  <div style="color:#3a3a3b; font-size:12px; padding:5px;">
+<b>Persons</b>:      Reese Witherspoon  |  Tom Staggs  |  Kevin Mayer  |  Hello Sunshine  |  Seth Rodsky  |  Jim Toth  |  Sarah Harden  |  Big Little Lies  |  The Morning Show  |  ’s board  |  The big picture<br><b>Location</b>:     Hollywood  |  Hollywood  |  Blackstone  |  Streaming  |  Hello Sunshine  |  Hello Sunshine  |  Hello Sunshine  |  Catch  |  Big Little Lies  |  The Morning Show  |  Hello Sunshine  |  Hello Sunshine  |  Hello Sunshine  |  Harden  |  ’s board  |  II  |  The big picture<br><b>Organization</b>: Otter Media  |  SPAC  |  Forest Road Acquisition Corp  |  MGM Studios  |  Hello Sunshine  |  Big Little Lies  |  The Morning Show  |  ’s board  |  II  |  The big picture
+  </div><br>
+  <div>
+<p><span class="entity" id="A0">Hello </span><span class="entity" id="A0">Sunshine</span><span class="entity" id="A0">, </span>the <span class="coref_entity" id="A1"><span class="entity" id="A1">Hollywood </span></span>production company co-founded by <span class="coref_entity" id="A2"><span class="entity" id="A2">Reese </span></span><span class="coref_entity" id="A2"><span class="entity" id="A2">Witherspoon</span></span><span class="coref_entity" id="A2"><span class="entity" id="A2">, </span></span>has sold to <span class="coref_entity" id="A5">a </span><span class="coref_entity" id="A5">new</span><span class="coref_entity" id="A5">, </span><span class="coref_entity" id="A5">unnamed </span><span class="coref_entity" id="A5">media </span><span class="coref_entity" id="A5">company </span><span class="coref_entity" id="A5">backed </span><span class="coref_entity" id="A5">by </span><span class="coref_entity" id="A3"><span class="entity" id="A3">Blackstone </span></span><span class="coref_entity" id="A5">and </span><span class="coref_entity" id="A5">led </span><span class="coref_entity" id="A5">by </span><span class="coref_entity" id="A17">former </span><span class="coref_entity" id="A17"><span class="entity" id="A4">Disney </span></span><span class="coref_entity" id="A17">executives </span><span class="coref_entity" id="A17"><span class="entity" id="A5">Tom </span></span><span class="coref_entity" id="A17"><span class="entity" id="A5">Staggs </span></span><span class="coref_entity" id="A17">and </span><span class="coref_entity" id="A5"><span class="entity" id="A5">Kevin </span></span><span class="coref_entity" id="A5"><span class="entity" id="A5">Mayer</span></span><span class="coref_entity" id="A5"><span class="entity" id="A5">, </span></span><span class="entity" id="A0">Hello </span><span class="entity" id="A0">Sunshine </span>said Monday.</p><p>Why it matters: <span class="entity" id="A0">Hello </span><span class="entity" id="A0">Sunshine </span>was one of several smaller <span class="coref_entity" id="A1"><span class="entity" id="A1">Hollywood </span></span>studios exploring opportunities to sell, given the ripe market for content firms in the streaming era.</p><p>Catch up quick: The production company was created in 2016 to tell stories about the experiences of women across all platforms — TV, film, podcasts, streaming, etc. Some of its more popular productions include shows starring <span class="coref_entity" id="A2"><span class="entity" id="A2">Witherspoon</span></span><span class="coref_entity" id="A2"><span class="entity" id="A2">, </span></span>like <span class="entity" id="A7">“</span><span class="entity" id="A7">Big </span><span class="entity" id="A7">Little </span><span class="entity" id="A7">Lies</span><span class="entity" id="A7">,</span>” and <span class="entity" id="A8">“</span><span class="entity" id="A8">The </span><span class="entity" id="A8">Morning </span><span class="entity" id="A8">Show</span><span class="entity" id="A8">.</span>"</p><p>The company's investors include <span class="entity" id="A9">AT&T </span>(via <span class="entity" id="A10">Otter </span><span class="entity" id="A10">Media</span><span class="entity" id="A10">)</span>, <span class="entity" id="A11">Emerson </span><span class="entity" id="A11">Collective</span><span class="entity" id="A11">, </span><span class="entity" id="A12">Seth </span><span class="entity" id="A12">Rodsky </span>and <span class="entity" id="A13">Jim </span><span class="entity" id="A13">Toth</span><span class="entity" id="A13">, </span><span class="coref_entity" id="A2"><span class="entity" id="A2">Witherspoon</span></span><span class="coref_entity" id="A2"><span class="entity" id="A2">'s </span></span>husband.</p><p>Details: The idea behind <span class="coref_entity" id="A5">the </span><span class="coref_entity" id="A5">new </span><span class="coref_entity" id="A5">company </span>is to roll up several media, entertainment and technology brands to take them public.</p><p><span class="entity" id="A0">Hello </span><span class="entity" id="A0">Sunshine</span><span class="entity" id="A0">, </span>will be the "initial pillar" of that rollup strategy, according to a statement. The deal enables <span class="entity" id="A0">Hello </span><span class="entity" id="A0">Sunshine </span>to remain independent.</p><p><span class="entity" id="A0">Hello </span><span class="entity" id="A0">Sunshine</span><span class="entity" id="A0">’s </span>existing senior management team, including <span class="coref_entity" id="A14">CEO </span><span class="coref_entity" id="A14"><span class="entity" id="A14">Sarah </span></span><span class="coref_entity" id="A14"><span class="entity" id="A14">Harden</span></span><span class="coref_entity" id="A14"><span class="entity" id="A14">, </span></span>will continue to oversee the company's day-to-day operations.</p><p><span class="coref_entity" id="A2"><span class="entity" id="A2">Witherspoon </span></span>and <span class="coref_entity" id="A14"><span class="entity" id="A15">Harden </span></span>will remain significant equity holders in the business, per a statement. The two will join <span class="coref_entity" id="A5">the </span><span class="coref_entity" id="A5">new </span><span class="coref_entity" id="A5">media </span><span class="coref_entity" id="A5">company</span><span class="coref_entity" id="A5">’s </span>board.</p><p>Be smart: The deal is being backed by investment capital from <span class="coref_entity" id="A3"><span class="entity" id="A3">Blackstone</span></span><span class="coref_entity" id="A3"><span class="entity" id="A3">, </span></span><span class="coref_entity" id="A3">one </span><span class="coref_entity" id="A3">of </span><span class="coref_entity" id="A3">the </span><span class="coref_entity" id="A3">world</span><span class="coref_entity" id="A3">'s </span><span class="coref_entity" id="A3">largest </span><span class="coref_entity" id="A3">global </span><span class="coref_entity" id="A3">investment </span><span class="coref_entity" id="A3">firms</span><span class="coref_entity" id="A3">. </span>It is worth more than $900 million, according to <span class="entity" id="A16">the </span><span class="entity" id="A16">Wall </span><span class="entity" id="A16">Street </span><span class="entity" id="A16">Journal</span><span class="entity" id="A16">, </span>which first reported news of the transaction.</p><p><span class="coref_entity" id="A17"><span class="entity" id="A17"><span class="statement" id="A17">Staggs </span></span></span><span class="coref_entity" id="A17"><span class="statement" id="A17">and </span></span><span class="coref_entity" id="A5"><span class="entity" id="A17"><span class="statement" id="A17">Mayer </span></span></span><span class="statement" id="A17">also </span><span class="statement" id="A17">announced </span><span class="statement" id="A17">last </span><span class="statement" id="A17">year </span><span class="statement" id="A17">that </span><span class="coref_entity" id="A17"><span class="statement" id="A17">they </span></span><span class="statement" id="A17">had </span><span class="statement" id="A17">formed </span><span class="statement" id="A17">a </span><span class="statement" id="A17">special </span><span class="statement" id="A17">purpose </span><span class="statement" id="A17">acquisition </span><span class="statement" id="A17">firm </span><span class="entity" id="A19"><span class="statement" id="A17">(</span></span><span class="entity" id="A19"><span class="statement" id="A17">SPAC</span></span><span class="entity" id="A19"><span class="statement" id="A17">) </span></span><span class="entity" id="A20"><span class="statement" id="A17">Forest </span></span><span class="entity" id="A20"><span class="statement" id="A17">Road </span></span><span class="entity" id="A20"><span class="statement" id="A17">Acquisition </span></span><span class="entity" id="A20"><span class="statement" id="A17">Corp</span></span><span class="entity" id="A20"><span class="statement" id="A17">. </span></span><span class="statement" id="A17">II</span><span class="statement" id="A17">. </span><span class="coref_entity" id="A5"><span class="statement" id="A17">This </span></span><span class="coref_entity" id="A5"><span class="statement" id="A17">company </span></span><span class="statement" id="A17">is </span><span class="statement" id="A17">separate </span><span class="statement" id="A17">from </span><span class="statement" id="A17">that </span><span class="statement" id="A17">venture</span><span class="statement" id="A17">.</p><p></span>The big picture: Streaming has sparked a flurry of consolidation in the TV and film production space. <span class="coref_entity" id="A21"><span class="entity" id="A21">Amazon </span></span>announced in May <span class="coref_entity" id="A21">it </span>would acquire <span class="entity" id="A22">MGM </span><span class="entity" id="A22">Studios </span>for $8.45 billion, including debt.</p>
+  </div>
+  <script>
+        var mentions = d3.selectAll(".entity")
+        mentions.on("mouseover", handleMouseOver).on("mouseout", handleMouseOut)
+
+        function handleMouseOver(d) { 
+            attr = d3.select(this).attr('id')
+            d3.selectAll('#'+attr).style('color','black')
+            d3.selectAll('#'+attr+'.entity').style('background-color','#95daf5').style('border-color','black')
+            d3.selectAll('#'+attr+'.coref_entity').style('background-color','#95daf5')
+            d3.selectAll('#'+attr+'.statement').style('font-weight','bold')
+            
+        }
+        function handleMouseOut(d) { 
+            attr = d3.select(this).attr('id')
+            d3.selectAll('#'+attr).style('background-color',null)
+                                .style('border-color',null)
+                                .style('font-weight',null)
+                                .style('color',null)
+                                }
+  </script>
+
+
+</body>
+  

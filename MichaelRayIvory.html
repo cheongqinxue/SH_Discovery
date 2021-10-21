@@ -1,0 +1,116 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.css" type="text/css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis-network.min.js"> </script>
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 1000px;
+            height: 1000px;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"group": 1, "id": 2080, "label": "Michael Jhamon Ivory", "shape": "dot", "size": 5}, {"group": 1, "id": 1952, "label": "Michayla Jyivel Ivory", "shape": "dot", "size": 5}, {"group": 1, "id": 7144, "label": "Rosa Ivory", "shape": "dot", "size": 5}, {"group": 1, "id": 3339, "label": "Shirley A. Ivory", "shape": "dot", "size": 5}, {"group": 1, "id": 1179, "label": "Joseph Ivory Jr. (Shirley)", "shape": "dot", "size": 5}, {"group": 1, "id": 1355, "label": "Shirley W. Green (George)", "shape": "dot", "size": 5}, {"group": 1, "id": 1612, "label": "Edna Mae Washington Sr.", "shape": "dot", "size": 5}, {"group": 1, "id": 1424, "label": "D\u2019Evereux J. Berry-Ivory", "shape": "dot", "size": 5}, {"group": 1, "id": 2674, "label": "Michael Ray Ivory", "shape": "dot", "size": 5}, {"group": 2, "id": 8691, "label": "Swift", "shape": "dot", "size": 5}, {"group": 1, "id": 1718, "label": "D\u2019Evereux Jymene Berry", "shape": "dot", "size": 5}, {"group": 1, "id": 1176, "label": "Glennell Hawkins (Tangela)", "shape": "dot", "size": 5}, {"group": 2, "id": 2075, "label": "North Harris College", "shape": "dot", "size": 5}, {"group": 1, "id": 1694, "label": "Christopher Washington", "shape": "dot", "size": 5}]);
+        edges = new vis.DataSet([{"from": 2080, "group": "per:siblings", "label": "per:siblings", "to": 1952, "weight": 2}, {"from": 2080, "group": "per:children", "label": "per:children", "to": 2674, "weight": 2}, {"from": 2080, "group": "per:children", "label": "per:children", "to": 1424, "weight": 2}, {"from": 2080, "group": "per:parents", "label": "per:parents", "to": 1355, "weight": 2}, {"from": 2080, "group": "per:parents", "label": "per:parents", "to": 1179, "weight": 2}, {"from": 2080, "group": "per:parents", "label": "per:parents", "to": 7144, "weight": 2}, {"from": 2080, "group": "per:siblings", "label": "per:siblings", "to": 1176, "weight": 2}, {"from": 1952, "group": "per:children", "label": "per:children", "to": 2674, "weight": 2}, {"from": 1952, "group": "per:children", "label": "per:children", "to": 1424, "weight": 2}, {"from": 1952, "group": "per:parents", "label": "per:parents", "to": 1355, "weight": 2}, {"from": 1952, "group": "per:parents", "label": "per:parents", "to": 1179, "weight": 2}, {"from": 1952, "group": "per:parents", "label": "per:parents", "to": 7144, "weight": 2}, {"from": 1952, "group": "per:siblings", "label": "per:siblings", "to": 1176, "weight": 2}, {"from": 7144, "group": "per:other_family", "label": "per:other_family", "to": 2674, "weight": 2}, {"from": 7144, "group": "per:other_family", "label": "per:other_family", "to": 1424, "weight": 2}, {"from": 7144, "group": "per:other_family", "label": "per:other_family", "to": 1355, "weight": 2}, {"from": 7144, "group": "per:other_family", "label": "per:other_family", "to": 1179, "weight": 2}, {"from": 3339, "group": "per:parents", "label": "per:parents", "to": 2674, "weight": 2}, {"from": 3339, "group": "per:spouse", "label": "per:spouse", "to": 1179, "weight": 2}, {"from": 1179, "group": "per:parents", "label": "per:parents", "to": 2674, "weight": 2}, {"from": 1179, "group": "per:other_family", "label": "per:other_family", "to": 1694, "weight": 2}, {"from": 1179, "group": "per:spouse", "label": "per:spouse", "to": 1355, "weight": 2}, {"from": 1179, "group": "per:other_family", "label": "per:other_family", "to": 1612, "weight": 2}, {"from": 1179, "group": "per:spouse", "label": "per:spouse", "to": 1424, "weight": 2}, {"from": 1355, "group": "per:parents", "label": "per:parents", "to": 2674, "weight": 2}, {"from": 1355, "group": "per:other_family", "label": "per:other_family", "to": 1694, "weight": 2}, {"from": 1355, "group": "per:parents", "label": "per:parents", "to": 1612, "weight": 2}, {"from": 1355, "group": "per:spouse", "label": "per:spouse", "to": 1424, "weight": 2}, {"from": 1612, "group": "per:parents", "label": "per:parents", "to": 2674, "weight": 2}, {"from": 1612, "group": "per:other_family", "label": "per:other_family", "to": 1694, "weight": 2}, {"from": 1424, "group": "per:spouse", "label": "per:spouse", "to": 2674, "weight": 2}, {"from": 2674, "group": "per:schools_attended", "label": "per:schools_attended", "to": 2075, "weight": 2}, {"from": 2674, "group": "per:employee_of", "label": "per:employee_of", "to": 8691, "weight": 2}, {"from": 2674, "group": "per:alternate_names", "label": "per:alternate_names", "to": 2674, "weight": 2}, {"from": 2674, "group": "per:spouse", "label": "per:spouse", "to": 1718, "weight": 2}, {"from": 2674, "group": "per:siblings", "label": "per:siblings", "to": 1694, "weight": 2}, {"from": 2674, "group": "per:siblings", "label": "per:siblings", "to": 1176, "weight": 2}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": false,
+            "type": "continuous"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "barnesHut": {
+            "avoidOverlap": 0,
+            "centralGravity": 0.3,
+            "damping": 0.09,
+            "gravitationalConstant": -2000,
+            "springConstant": 0.001,
+            "springLength": 250
+        },
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+	 
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>
