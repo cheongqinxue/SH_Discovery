@@ -9,3 +9,7 @@ The specific use case here is to extract statements made by people or organisati
 - [TV best bets](https://htmlpreview.github.io/?https://github.com/cheongqinxue/SH_Discovery/blob/main/Information%20Extraction%20Demos/demo_c.html)
 - [Reese Witherspoon's Hello Sunshine to Be Sold to Media Company Backed by Blackstone](https://htmlpreview.github.io/?https://github.com/cheongqinxue/SH_Discovery/blob/main/Information%20Extraction%20Demos/demo_d.html)
 - ['Functionally useless': California privacy law's big reveal falls short](https://htmlpreview.github.io/?https://github.com/cheongqinxue/SH_Discovery/blob/main/Information%20Extraction%20Demos/demo_e.html)
+
+#### Identifying stakeholders to investigate
+
+![alt text](https://github.com/cheongqinxue/SH_Discovery/blob/main/Sentiment/fileA.png)
