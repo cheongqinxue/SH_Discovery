@@ -24,3 +24,6 @@ As it turns out, one of those in the diagram above, Stuart Appelbaum, works for 
 <p align="center">
   <img src="Relation%20Extraction/RWDSU_1.png" width="550">
 </p>
+
+The same can also be done at scale. Some of the larger relationship networks discovered using the same method:
+[Amazon](Relation%20Extraction/amazon.html)
