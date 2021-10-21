@@ -28,7 +28,7 @@ As it turns out, one of those in the diagram above, Stuart Appelbaum, works for 
 The same can also be done at scale. Some of the larger relationship networks discovered using the same method:<br>
 - [Amazon](https://htmlpreview.github.io/?https://github.com/cheongqinxue/SH_Discovery/blob/main/Relation%20Extraction/amazon.html)
 - [AWS](https://htmlpreview.github.io/?https://github.com/cheongqinxue/SH_Discovery/blob/main/Relation%20Extraction/aws.html)
-- [AFL](https://htmlpreview.github.io/?https://github.com/cheongqinxue/SH_Discovery/blob/main/Relation%20Extraction/AFL.html)
+- [American Federation of Labor and Congress of Industrial Organizations](https://htmlpreview.github.io/?https://github.com/cheongqinxue/SH_Discovery/blob/main/Relation%20Extraction/AFL.html)
 - [Assembly Committee on Governmental Employees](https://htmlpreview.github.io/?https://github.com/cheongqinxue/SH_Discovery/blob/main/Relation%20Extraction/AssemblyCommitteeOnGovernmentalEmployees.html)
 - [Global Stewardship Portfolio Construction](https://htmlpreview.github.io/?https://github.com/cheongqinxue/SH_Discovery/blob/main/Relation%20Extraction/GlobalStewardshipPortfolioConstruction.html)
 - [Justice Department](https://htmlpreview.github.io/?https://github.com/cheongqinxue/SH_Discovery/blob/main/Relation%20Extraction/JusticeDepartment.html)
