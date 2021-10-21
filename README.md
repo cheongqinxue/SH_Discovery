@@ -21,5 +21,6 @@ The Retail, Wholesale and Department Store Union's (RWDSU) statements are negati
 #### How are the stakeholders related?
 
 As it turns out, one of those in the diagram above, Stuart Appelbaum, works for the RWDSU. That was discovered using entity relation extraction. Using the same technique, other people related to RWDSU were also detected:
-
-![RWDSU](https://github.com/cheongqinxue/SH_Discovery/blob/main/Relation%20Extraction/RWDSU_1.png)
+<p align="center">
+  <img src="Relation%20Extraction/RWDSU_1.png" width="350">
+</p>
