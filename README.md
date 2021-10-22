@@ -32,6 +32,7 @@ As it turns out, one of those in the diagram above, Stuart Appelbaum, works for 
 </p>
 
 Some of the larger relationship networks discovered using the same method:<br>
+<i>Note these charts are interactive. You can drag the nodes to reposition them if the labels are difficult to see</i><br>
 - [Amazon](https://htmlpreview.github.io/?https://github.com/cheongqinxue/SH_Discovery/blob/main/Relation%20Extraction/amazon.html)
 - [AWS](https://htmlpreview.github.io/?https://github.com/cheongqinxue/SH_Discovery/blob/main/Relation%20Extraction/aws.html)
 - [Retail, Wholesale and Department Store Union](https://htmlpreview.github.io/?https://github.com/cheongqinxue/SH_Discovery/blob/main/Relation%20Extraction/rwdsu.html)
