@@ -26,12 +26,12 @@ Similar plots studying the sentiments of statements made that mention Facebook a
 
 #### How are the stakeholders related?
 
-As it turns out, one of those in the diagram above, Stuart Appelbaum, works for the RWDSU. That was discovered using entity relation extraction. Using the same technique, other people related to RWDSU were also detected:
+As it turns out, one of those in the diagram above, Stuart Appelbaum, works for the RWDSU. This information can be accumulated across several articles to create a relationship network. For RWDSU, 3 unique employees were discovered automatically:
 <p align="center" style="margin:-10%;">
   <img src="Relation%20Extraction/RWDSU_1.png" width="550">
 </p>
 
-The same can also be done at scale. Some of the larger relationship networks discovered using the same method:<br>
+Some of the larger relationship networks discovered using the same method:<br>
 - [Amazon](https://htmlpreview.github.io/?https://github.com/cheongqinxue/SH_Discovery/blob/main/Relation%20Extraction/amazon.html)
 - [AWS](https://htmlpreview.github.io/?https://github.com/cheongqinxue/SH_Discovery/blob/main/Relation%20Extraction/aws.html)
 - [Retail, Wholesale and Department Store Union](https://htmlpreview.github.io/?https://github.com/cheongqinxue/SH_Discovery/blob/main/Relation%20Extraction/rwdsu.html)
