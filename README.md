@@ -14,8 +14,12 @@ The specific use case here is to extract statements made by people or organisati
 
 These are the people and organizations that were captured from the sample set:
 
-![alt text](https://github.com/cheongqinxue/SH_Discovery/blob/main/organizations.png)
-![alt text](https://github.com/cheongqinxue/SH_Discovery/blob/main/people.png)
+<p align="center">
+  <img src="organizations.png" width="500">
+</p>
+<p align="center">
+  <img src="persons.png" width="500">
+</p>
 
 
 Statements can be extracted and analysed in aggregate. We can figure out who was talking about an entity of interest and study the average sentiments of the statements made about that entity. Using articles in Aug 21, the following depicts the average sentiment of statements made by various persons/organisations that mention Amazon.
