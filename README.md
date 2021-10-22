@@ -12,6 +12,12 @@ The specific use case here is to extract statements made by people or organisati
 
 #### Identifying stakeholders to investigate
 
+These are the people and organizations that were captured from the sample set:
+
+![alt text](https://github.com/cheongqinxue/SH_Discovery/blob/main/organizations.png)
+![alt text](https://github.com/cheongqinxue/SH_Discovery/blob/main/people.png)
+
+
 Statements can be extracted and analysed in aggregate. We can figure out who was talking about an entity of interest and study the average sentiments of the statements made about that entity. Using articles in Aug 21, the following depicts the average sentiment of statements made by various persons/organisations that mention Amazon.
 
 The Retail, Wholesale and Department Store Union's (RWDSU) statements are negative on average - not surprising since they are accusing Amazon of [wrongdoing during a union election](https://htmlpreview.github.io/?https://github.com/cheongqinxue/SH_Discovery/blob/main/Information%20Extraction%20Demos/demo_a.html).
