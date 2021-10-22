@@ -27,7 +27,7 @@ Similar plots studying the sentiments of statements made that mention Facebook a
 #### How are the stakeholders related?
 
 As it turns out, one of those in the diagram above, Stuart Appelbaum, works for the RWDSU. That was discovered using entity relation extraction. Using the same technique, other people related to RWDSU were also detected:
-<p align="center">
+<p align="center" style="margin:-20px;">
   <img src="Relation%20Extraction/RWDSU_1.png" width="550">
 </p>
 
