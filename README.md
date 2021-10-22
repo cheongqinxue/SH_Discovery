@@ -1,8 +1,6 @@
 ### Information Extraction
 
-These demos show how NER, coreferencing and SRL come together to identify people, organisations and other entities mentioned in text, and the actions or events that involve them. Each demo will display a list of captured NERs and spans in the text that refer to them. 
-
-The specific use case here is to extract statements made by people or organisations, so SRL picks out statements made and attributes them to one of the captured entities.
+These demos show how NER, coreferencing and SRL come together to identify people, organisations and other entities mentioned in text, and the actions or events that involve them. The specific use case here is to extract statements made by people or organisations, so SRL picks out statements made and attributes them to one of the captured entities. Each demo will display a list of captured NERs and spans in the text that refer to them. You can mouse over the unerlined text or the entities listed at the top to reveal their coreferent spans (in blue highlights) and statements captured (in bold).
 
 - [Amazon Union Election Do-Over Recommendation Hinges on Mailbox](https://htmlpreview.github.io/?https://github.com/cheongqinxue/SH_Discovery/blob/main/Information%20Extraction%20Demos/demo_a.html)
 - [USPS has shorted some workers’ pay for years](https://htmlpreview.github.io/?https://github.com/cheongqinxue/SH_Discovery/blob/main/Information%20Extraction%20Demos/demo_b.html)
