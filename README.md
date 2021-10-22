@@ -10,9 +10,7 @@ The specific use case here is to extract statements made by people or organisati
 - [Reese Witherspoon's Hello Sunshine to Be Sold to Media Company Backed by Blackstone](https://htmlpreview.github.io/?https://github.com/cheongqinxue/SH_Discovery/blob/main/Information%20Extraction%20Demos/demo_d.html)
 - ['Functionally useless': California privacy law's big reveal falls short](https://htmlpreview.github.io/?https://github.com/cheongqinxue/SH_Discovery/blob/main/Information%20Extraction%20Demos/demo_e.html)
 
-#### Identifying stakeholders to investigate
-
-These are the people and organizations that were captured from the sample set:
+These are the people and organizations that were captured from the entire sample set:
 
 <p align="center">
   <img src="organizations.png" width="500">
@@ -21,6 +19,7 @@ These are the people and organizations that were captured from the sample set:
   <img src="persons.png" width="500">
 </p>
 
+#### Identifying stakeholders to investigate
 
 Statements can be extracted and analysed in aggregate. We can figure out who was talking about an entity of interest and study the average sentiments of the statements made about that entity. Using articles in Aug 21, the following depicts the average sentiment of statements made by various persons/organisations that mention Amazon.
 
