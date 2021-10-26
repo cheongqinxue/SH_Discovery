@@ -59,4 +59,4 @@ Some of the larger relationship networks discovered using the same method:<br>
 - [League of Women Voters](https://htmlpreview.github.io/?https://github.com/cheongqinxue/SH_Discovery/blob/main/Relation%20Extraction/leagueofwomenvoters.html)
 - [Facebook](https://htmlpreview.github.io/?https://github.com/cheongqinxue/SH_Discovery/blob/main/Relation%20Extraction/facebook.html)
 - [Google](https://htmlpreview.github.io/?https://github.com/cheongqinxue/SH_Discovery/blob/main/Relation%20Extraction/google.html)
-- [Richard Trumka](https://htmlpreview.github.io/?https://github.com/cheongqinxue/SH_Discovery/blob/main/Relation%20Extraction/richardtumka.html)
+- [Richard Trumka](https://htmlpreview.github.io/?https://github.com/cheongqinxue/SH_Discovery/blob/main/Relation%20Extraction/richardtrumka.html)
